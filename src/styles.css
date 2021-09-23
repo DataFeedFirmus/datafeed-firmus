@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+.price{
+  color: #023d78;
+}
+
+.card :hover{
+  cursor: pointer;
+}
+
+.p{
+  font-family: Montserrat,sans-serif;
+}
+
+
+.red{
+  color: red;
+}
+
+.green{
+  color: forestgreen;
+}

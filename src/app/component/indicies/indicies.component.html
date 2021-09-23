@@ -1,0 +1,29 @@
+
+<div class="row justify-content-between mt-3">
+  <div class="col-xl-3 col-md-3 mb-3" *ngFor="let stock of indicies">
+    <div class="card p-3 mb-2" (click)="getDetails(stock.symbol)">
+      <div class="d-flex justify-content-between">
+        <div class="d-flex flex-row align-items-center">
+          <div class="icon"> <i class="bx bxl-dribbble"></i> </div>
+          <div class="ms-2 c-details">
+<!--            <h3 class="mb-0">{{stock.name}}</h3> <span>{{stock.symbol}} - {{stock.exchange}}</span>-->
+            <h3>{{stock.symbol}} - {{stock.exchange}}</h3>
+          </div>
+        </div>
+        <div class="badge"> <span><h3 class="heading price">{{stock.price}} {{stock.currency}}</h3></span> </div>
+      </div>
+      <div class="mt-3">
+        <div class="row justify-content-between">
+          <div class="col-md-7 col-xl-7 col-sm-7 text-start">
+            <p class="font-weight-light mt-2">52 week: {{stock['fifty_two_week']['range']}}</p>
+            <small><b>{{stock.name}}</b></small>
+          </div>
+          <div class="col text-end">
+            <p class="font-weight-light mt-2 " style="font-size: 40px" [ngClass]="stock.percent_change < 0 ? 'red' : 'green'"> {{stock.percent_change}}%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

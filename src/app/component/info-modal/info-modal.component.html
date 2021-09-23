@@ -1,0 +1,148 @@
+<div class="row mt-3">
+  <div class="col-md-12 mt-1">
+    <div class="input-group">
+      <input type="text" class="form-control" (keyup.enter)="getDetails()" [(ngModel)]="item" placeholder="Search..." aria-label="Search..." aria-describedby="button-addon2">
+      <button type="button" (click)="getDetails()" class="btn text-white" style="background-color: #aac6ff;margin-right: 30px">
+        <i class="fa fa-search"></i>
+      </button></div>
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="exampleModal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="data">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row text-start">
+          <b>Basic info:</b>
+          <hr>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col text-start">
+            <p>Symbol: {{data['symbol']}}</p>
+          </div>
+          <div class="col text-start">
+            <p>Name: {{data['name']}}</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-between">
+          <div class="col text-start">
+            <p>Exchange: {{data['exchange']}}</p>
+          </div>
+          <div class="col text-start">
+            <p>Currency: {{data['currency']}}</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-between">
+          <div class="col text-start">
+            <p>Close: {{data['close']}}</p>
+          </div>
+          <div class="col text-start">
+            <p>Open: {{data['open']}}</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-between">
+          <div class="col text-start">
+            <p>High: {{data['high']}}</p>
+          </div>
+          <div class="col text-start">
+            <p>Low: {{data['low']}}</p>
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col text-start">
+            <p>Average volume: {{data['average_volume']}}</p>
+          </div>
+          <div class="col text-start">
+            <p>Volume: {{data['volume']}}</p>
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col text-start">
+            <p>Previous close: {{data['previous_close']}}</p>
+          </div>
+          <div class="col text-start">
+            <p>Change: {{data['change']}}</p>
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col text-start">
+            <p>Percent change: {{data['percent_change']}}</p>
+          </div>
+          <div class="col text-start">
+            <p>Datetime: {{data['datetime']}}</p>
+
+          </div>
+        </div>
+        <div class="row text-start">
+          <b>52 week:</b>
+          <hr>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col text-start">
+            <p>Low: {{data['fifty_two_week']['low']}}</p>
+          </div>
+          <div class="col text-start">
+            <p>High: {{data['fifty_two_week']['high']}}</p>
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col text-start">
+            <p>Low change: {{data['fifty_two_week']['low_change']}}</p>
+          </div>
+          <div class="col text-start">
+            <p>High change: {{data['fifty_two_week']['high_change']}}</p>
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col text-start">
+            <p>Low change percent: {{data['fifty_two_week']['low_change_percent']}}</p>
+          </div>
+          <div class="col text-start">
+            <p>High change percent: {{data['fifty_two_week']['high_change_percent']}}</p>
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col text-start">
+            <p>Range: {{data['fifty_two_week']['range']}}</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer text-white">
+        <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--"symbol":"BTC",-->
+<!--"name":"ClearShares Piton Intermediate Fixed Income ETF",-->
+<!--"exchange":"NYSE",-->
+<!--"currency":"USD",-->
+<!--"datetime":"2021-05-10",-->
+<!--"open":"99.200",-->
+<!--"high":"99.200",-->
+<!--"low":"99.070",-->
+<!--"close":"99.120",-->
+<!--"volume":"1109",-->
+<!--"previous_close":"99.148",-->
+<!--"change":"-0.028",-->
+<!--"percent_change":"-0.028",-->
+<!--"average_volume":"1809",-->
+
+
+<!--"fifty_two_week":{-->
+<!--"low":"98.760",-->
+<!--"high":"99.215",-->
+<!--"low_change":"0.360",-->
+<!--"high_change":"-0.095",-->
+<!--"low_change_percent":"0.365",-->
+<!--"high_change_percent":"-0.096",-->
+<!--"range":"98.760002 - 99.214996"-->
+<!--}-->

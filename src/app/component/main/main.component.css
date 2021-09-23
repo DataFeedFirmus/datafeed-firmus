@@ -1,0 +1,17 @@
+.title{
+  font-size: 30px;
+}
+
+.bg-type{
+  background-color: #023D78;
+}
+
+.card{
+  border-radius: 7px;
+}
+
+p:hover{
+  cursor: pointer;
+}
+
+

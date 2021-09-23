@@ -1,0 +1,74 @@
+<!--<nav class="navbar fixed-top flex-md-nowrap p-0 " style="height: 100px;position: relative; background-color: #f7f8fa">-->
+<!--  <img src="assets/logosmall.png" style="margin-left: 25px" width="20%">-->
+<!--  <div class="display-4">{{title}}</div>-->
+<!--  <app-info-modal (error)="error = $event" style="margin-right: 25px"></app-info-modal>-->
+<!--</nav>-->
+
+<div class="row justify-content-between bg-white">
+  <div class="col">
+    <img src="assets/logosmall.png" class="mt-2" style="margin-left: 25px" width="80%">
+  </div>
+  <div class="col text-center">
+    <div class="display-4 mt-1">{{title}}</div>
+
+  </div>
+  <div class="col text-end">
+    <app-info-modal (error)="error = $event" class="mt-2" style="margin-right: 25px"></app-info-modal>
+  </div>
+</div>
+<app-error [error]="error"></app-error>
+
+<!--<div class="container-fluid">-->
+<!--  <div class="row flex-nowrap">-->
+<!--    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #f7f8fa">-->
+<!--      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">-->
+<!--        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">-->
+<!--          <li >-->
+<!--            <p href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">-->
+<!--              <i class="fa fa-dashboard"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>-->
+<!--            </p>-->
+<!--            <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">-->
+<!--              <li class="w-100">-->
+<!--                <p  class="nav-link px-0" (click)="activatePage('indicies');title = 'Indicies'"><i class="fa fa-indent"></i> Indicies</p>-->
+<!--              </li>-->
+<!--              <li class="w-100">-->
+<!--                <p  class="nav-link px-0" (click)="activatePage('forex');title = 'Forex'"><i class="fa fa-dollar"></i> Forex</p>-->
+<!--              </li>-->
+<!--              <li class="w-100">-->
+<!--                <p class="nav-link px-0" (click)="activatePage('crypto');title = 'Cryptocurrencies'"><i class="fa fa-bitcoin"></i> Crypto</p>-->
+<!--              </li>-->
+<!--              <li class="w-100">-->
+<!--                <p class="nav-link px-0" (click)="activatePage('stocks');title = 'Stocks'"><i class="fa fa-area-chart"></i> Stocks</p>-->
+<!--              </li>-->
+<!--              <li class="w-100">-->
+<!--                <app-info-modal (error)="error = $event"></app-info-modal>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--        <hr>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col py-3">-->
+<!--      <div class="container-fluid" style="position: relative">-->
+<!--        <div class="row justify-content-between">-->
+<!--          <div class="col text-start">-->
+<!--            <div class="display-4 text-white">{{title}}</div>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--        <app-error [error]="error"></app-error>-->
+<!--        <router-outlet></router-outlet>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container-fluid">
+<!--  <app-info-modal (error)="error = $event" style="margin-right: 25px"></app-info-modal>-->
+  <router-outlet></router-outlet>
+</div>
+
+
+
+

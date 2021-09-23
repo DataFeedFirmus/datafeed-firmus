@@ -1,0 +1,27 @@
+/*.red{*/
+/*  color: red;*/
+/*}*/
+
+/*.green{*/
+/*  color: forestgreen;*/
+/*}*/
+
+.card{
+  border-radius: 7px;
+}
+
+.symbol{
+  font-size: 30px;
+}
+
+.redBg{
+  background-color: red;
+}
+
+.greenBg{
+  background-color: forestgreen;
+}
+
+.card{
+  height: 200px;
+}
