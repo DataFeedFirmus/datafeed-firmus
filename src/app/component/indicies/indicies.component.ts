@@ -10,21 +10,13 @@ import {CommunicationService} from "../../service/communication.service";
 export class IndiciesComponent  implements OnInit, OnDestroy {
   indicies = []
   recall;
-  DATA =
-    ['DJI',
-      'SPX',
-      'IXIC',
-      'NDX',
-      'RUT',
-      'VIX',
-      'AIM1',
-      'GDAXI',
-      'IBEX',
-      ]
+  DATA: any
   constructor(private call : ApireqService, private communitaion : CommunicationService) {
-    this.indicies = this.call.getDataForItemReusable(this.DATA)
+    this.call.getItemsFromFireBase("indexes").then((value) =>{
+      this.DATA = value;
+      this.indicies = this.call.getDataForItemReusable(value)
+    });
     this.communitaion.changeTitle("Indexes")
-
   }
 
   ngOnInit() {

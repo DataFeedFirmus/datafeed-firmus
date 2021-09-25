@@ -9,35 +9,14 @@ import {CommunicationService} from "../../service/communication.service";
 })
 export class ForexComponent implements OnInit, OnDestroy {
   forexList = [];
-
-  needen = ['EUR/USD',
-    'USD/CAD',
-    'GBP/USD',
-    'USD/CHF',
-    'USD/JPY',
-    'USD/CNH',
-    'USD/HKD',
-    'EUR/CHF',
-    'XAU/USD',
-    'XAG/USD',
-    'XPD/USD',
-    'XPT/USD',
-    'AUD/USD',
-    'USD/RUB',
-    'USD/MXN',
-    'USD/COP',
-    'USD/PEN',
-    'USD/ILS',
-    'USD/TRY']
-
-  // needen = ['AUD/USD', 'EUR/CHF', 'EUR/USD', 'GBP/USD','USD/CAD', 'USD/CHF', 'USD/CNH', 'USD/HKD','USD/ILS', 'USD/JPY', 'USD/MXN','USD/RUB',
-  // 'USD/TRY', 'XAU/USD', 'XPD/USD', 'XPD/USD', 'XAG/USD']
-  // needen = ['AUD/USD', 'EUR/CHF','USD/CHF','EUR/USD']
+  needen:any;
   recall;
   constructor(private call : ApireqService, private communitaion : CommunicationService) {
-    this.forexList = this.call.getDataForItemReusable(this.needen)
+    this.call.getItemsFromFireBase("forex").then((value) =>{
+      this.needen = value;
+      this.forexList = this.call.getDataForItemReusable(value)
+    });
     this.communitaion.changeTitle("Forex")
-
   }
 
   ngOnInit() {

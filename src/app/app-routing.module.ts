@@ -9,7 +9,7 @@ import {IndiciesComponent} from "./component/indicies/indicies.component";
 
 const routes: Routes = [
   { path: '', component: StockComponent },
-  { path: 'main', component: MainComponent , children:[
+  { path: 'datafeed', component: MainComponent , children:[
       { path: 'stocks', component: StockComponent },
       { path: 'crypto', component: EtfComponent },
       { path: 'forex', component: ForexComponent },

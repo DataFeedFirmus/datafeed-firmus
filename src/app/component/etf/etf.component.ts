@@ -8,33 +8,15 @@ import {CommunicationService} from "../../service/communication.service";
   styleUrls: ['./etf.component.css']
 })
 export class EtfComponent implements OnInit, OnDestroy {
-  // needen = ['BTC', 'ETH', 'XPT']
-  needen = ['BTC/USD',
-    'ETH/USD',
-    'LTC/USD',
-    'BCH/USD',
-    'LINK/USD',
-    'ETC/USD',
-    'EOS/USD',
-    'XLM/USD',
-    'XTZ/USD',
-    'REP/USD',
-    'ADA/USD',
-    'UNIS/USD',
-    'AAVE/USD',
-    'ATOM/USD',
-    'ALGO/USD',
-    'FIL/USD',
-    'MKR/USD',
-    'COMP/USD',
-    'YFI/USD',
-    'DOGE/USD',
-    'PDOTN/USD']
-
+  needen: any;
   etfList = []
   recall;
   constructor(private call : ApireqService, private communitaion : CommunicationService) {
-    this.etfList = this.call.getDataForItemReusable(this.needen)
+    this.call.getItemsFromFireBase("crypto").then((value) =>{
+      this.needen = value;
+      this.etfList = this.call.getDataForItemReusable(value)
+    });
+    // this.etfList = this.call.getDataForItemReusable(this.needen)
     this.communitaion.changeTitle("Crypto")
   }
   ngOnInit() {

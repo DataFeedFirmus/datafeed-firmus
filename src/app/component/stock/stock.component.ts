@@ -10,34 +10,14 @@ import {CommunicationService} from "../../service/communication.service";
 export class StockComponent implements OnInit, OnDestroy {
   stocks = []
   recall;
-  DATA = ['AAPL',
-    'MSFT',
-    'GOOG',
-    'AMZN',
-    'FB',
-    'TSLA',
-    'NVDA',
-    'JPM',
-    'WMT',
-    'BAC',
-    'DIS',
-    'NFLX',
-    'PFE',
-    'CSCO',
-    'KO',
-    'XOM',
-    'INTC',
-    'T',
-    'MCD',
-    'BA',
-    'AMD',
-    'GE',
-    'F']
-  // DATA = ['AAPL', 'AAPL']
-  constructor(private call : ApireqService, private communitaion : CommunicationService) {
-    this.stocks = this.call.getDataForItemReusable(this.DATA)
-    this.communitaion.changeTitle("Stocks")
+  DATA: any;
 
+  constructor(private call : ApireqService, private communitaion : CommunicationService) {
+    this.call.getItemsFromFireBase("stocks").then((value) =>{
+      this.DATA = value;
+      this.stocks = this.call.getDataForItemReusable(value)
+    });
+    this.communitaion.changeTitle("Stocks")
   }
 
   ngOnInit() {

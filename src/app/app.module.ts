@@ -15,6 +15,15 @@ import { IndiciesComponent } from './component/indicies/indicies.component';
 import { InfoModalComponent } from './component/info-modal/info-modal.component';
 import {FormsModule} from "@angular/forms";
 import { ErrorComponent } from './component/error/error.component';
+import {AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
+import { AngularFireDatabaseModule} from "@angular/fire/database";
+import {AngularFireModule} from "@angular/fire";
+
+export const firebaseConfig = {
+  authDomain: "courses-4d546.firebaseapp.com",
+  databaseURL: "https://datafeed-firmus-default-rtdb.firebaseio.com",
+  projectId: "datafeed-firmus"
+}
 
 @NgModule({
   declarations: [
@@ -29,13 +38,17 @@ import { ErrorComponent } from './component/error/error.component';
     ErrorComponent
   ],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        ChartsModule,
-        FormsModule
+      AngularFirestoreModule,
+      AngularFireDatabaseModule,
+      AngularFireModule.initializeApp(firebaseConfig),
+      BrowserModule,
+       AppRoutingModule,
+       HttpClientModule,
+       ChartsModule,
+       FormsModule
     ],
   providers: [ThemeService,
+    AngularFirestore,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,
